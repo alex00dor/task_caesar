@@ -121,7 +121,7 @@ ceaserApp.controller("MainController", function ($scope, $http) {
 
         for (i = 0; i<alphabet.length; i++) {
             for (var j = 0; j<alphabet.length; j++) {
-                sLetters[i] += 0.01 * countLetters[j] * weigth[(j + i) % 26];
+                sLetters[i] += 0.01 * countLetters[j] * weight[(j + i) % 26];
                 if (max < sLetters[i]){
                     max = sLetters[i];
                 }
