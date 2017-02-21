@@ -145,5 +145,6 @@ ceaserApp.controller("MainController", function ($scope, $http) {
         var temp = $scope.enterText;
         $scope.enterText = $scope.resultText;
         $scope.resultText = temp;
+        $scope.changeEnterText($scope.enterText);
     };
 });
