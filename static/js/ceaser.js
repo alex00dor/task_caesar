@@ -47,6 +47,11 @@ ceaserApp.controller("MainController", function ($scope, $http) {
         }
     };
 
+    $scope.changeEnterText = function changeEnterText(enterText) {
+        $scope.ChangeChart(enterText);
+        $scope.crackCipher(enterText);
+    };
+
     $scope.ChangeChart = function ChangeChart(enterText) {
         $scope.LettersChart.data = {"cols": [
         {id: "t", label: "Latter", type: "string"},
@@ -129,7 +134,11 @@ ceaserApp.controller("MainController", function ($scope, $http) {
         }
 
         $scope.crackStep = (26 - sLetters.indexOf(max)) % 26;
-        $scope.showMessage = true;
+        if ($scope.crackStep !=0 && str.length > 5) {
+            $scope.showMessage = true;
+        } else{
+            $scope.showMessage = false;
+        }
     };
 
     $scope.swap = function swap() {
