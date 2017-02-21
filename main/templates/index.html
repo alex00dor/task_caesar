@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Ceaser{% endblock %}
+{% block js %}
+    {{ block.super }}
+    <script src="{% static 'js/ceaser.js' %}"></script>
+    <script src="{% static 'js/ng-google-chart.min.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="container" ng-app = "ceaserApp" ng-controller="MainController">
+        <div class="row">
+          <div class="col-md-5">
+              <label for="str">Enter text:</label>
+              <textarea rows="10" class="form-control" name="str" ng-change="ChangeChart(enterText)" ng-model="enterText"></textarea>
+          </div>
+          <div class="col-md-2" style="margin-top: 30px;">
+            <div class="form-group input-group input-group-sm">
+              <input ng-model="rot" type="text" class="form-control" aria-describedby="step" required>
+                <span class="input-group-addon" id="step">Step</span>
+            </div>
+              <div class="form-group">
+                  <div class="btn-group btn-group-xs" role="group" aria-label="action">
+                      <button class="btn btn-default" ng-click="Encrypt(enterText, rot)">Encrypt</button>
+                      <button class="btn btn-default" ng-click="crackCipher(enterText)">Crack</button>
+                      <button class="btn btn-default" ng-click="Decrypt(enterText, rot)">Decrypt</button>
+                  </div>
+              </div>
+              <div class="alert alert-info" role="alert">If you don't know step you can try crack cipher.</div>
+          </div>
+          <div class="col-md-5">
+              <label for="str">Result:</label>
+              <textarea rows="10" class="form-control" name="result" ng-model="resultText" disabled></textarea>
+          </div>
+        </div>
+        <div class="row">
+            <div google-chart chart="LettersChart" style="height:270px; width:100%;"></div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="alert alert-danger alert-dismissible" role="alert" ng-show="showErrorMessage">
+              <button ng-click="showErrorMessage = false" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              {% verbatim %}{{ ErrorText }}{% endverbatim %}
+            </div>
+            <div class="alert alert-success alert-dismissible" role="alert" ng-show="showMessage">
+              <button ng-click="showMessage = false" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              I think the step should be <strong>{% verbatim %}{{ crackStep }}{% endverbatim %}</strong>.
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}
+    Main page
+    {% endblock %}</title>
+</head>
+{% block css %}
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+    <style>
+        button:focus { outline: none; }
+    </style>
+{% endblock %}
+{% block js %}
+    <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/angular.min.js' %}"></script>
+{% endblock %}
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">
+        Ceaser
+      </a>
+    </div>
+  </div>
+</nav>
+{% block content %}
+
+{% endblock %}
+</body>
+</html>
