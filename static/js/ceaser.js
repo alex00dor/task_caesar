@@ -131,4 +131,10 @@ ceaserApp.controller("MainController", function ($scope, $http) {
         $scope.crackStep = (26 - sLetters.indexOf(max)) % 26;
         $scope.showMessage = true;
     };
+
+    $scope.swap = function swap() {
+        var temp = $scope.enterText;
+        $scope.enterText = $scope.resultText;
+        $scope.resultText = temp;
+    };
 });
