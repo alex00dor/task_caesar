@@ -1,24 +1,24 @@
 def ceaserEncrypt(str, rot):
     str = str.lower()
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
-    new_str = ''
+    strNew = ''
     for c in str:
         if c in alphabet:
-            new_str += alphabet[(alphabet.index(c)+int(rot)) % len(alphabet)]
+            strNew += alphabet[(alphabet.index(c)+int(rot)) % len(alphabet)]
         else:
-            new_str += c
-    return new_str
+            strNew += c
+    return strNew
 
 def ceaserDecrypt(str, rot):
     str = str.lower()
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
-    org_str = ''
+    strOrg = ''
     for c in str:
         if c in alphabet:
-            org_str += alphabet[(alphabet.index(c)-int(rot)) % len(alphabet)]
+            strOrg += alphabet[(alphabet.index(c)-int(rot)) % len(alphabet)]
         else:
-            org_str += c
-    return org_str
+            strOrg += c
+    return strOrg
 
 def ceaserCrack(str):
 
