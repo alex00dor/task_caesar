@@ -13,12 +13,12 @@
               <label for="str">Enter text:</label>
               <textarea rows="10" class="form-control" name="str" ng-change="ChangeChart(enterText)" ng-model="enterText"></textarea>
           </div>
-          <div class="col-md-2" style="margin-top: 25px;">
-            <div class="form-group input-group input-group-sm">
+          <div class="col-md-2" style="margin-top: 25px;" align="center">
+            <div class="form-group input-group input-group-sm col-lg-7">
               <input ng-model="rot" type="text" class="form-control" aria-describedby="step" required>
                 <span class="input-group-addon" id="step">Step</span>
             </div>
-              <div class="form-group" align="center">
+              <div class="form-group">
                   <div class="btn-group btn-group-xs" role="group" aria-label="action">
                       <button class="btn btn-default" ng-click="Encrypt(enterText, rot)">Encrypt</button>
                       <button class="btn btn-default" ng-click="crackCipher(enterText)">Crack</button>
