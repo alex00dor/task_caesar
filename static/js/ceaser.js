@@ -99,7 +99,7 @@ ceaserApp.controller("MainController", function ($scope, $http) {
         str = str.toLowerCase();
         var max = 0;
         var alphabet = 'abcdefghijklmnopqrstuvwxyz';
-        var weigth = [6.51, 1.89, 3.06, 5.08, 17.4,
+        var weight = [6.51, 1.89, 3.06, 5.08, 17.4,
                       1.66, 3.01, 4.76, 7.55, 0.27,
                       1.21, 3.44, 2.53, 9.78, 2.51,
                       0.29, 0.02, 7.00, 7.27, 6.15,
