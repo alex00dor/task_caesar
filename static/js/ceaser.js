@@ -65,7 +65,7 @@ ceaserApp.controller("MainController", function ($scope, $http) {
             countLetters.push(0);
         }
 
-        for (var i = 0; i<enterText.length; i++){
+        for (i = 0; i<enterText.length; i++){
             if (alphabet.indexOf(enterText[i]) != -1){
                 countLetters[alphabet.indexOf(enterText[i])]++;
                 len_freq++;
@@ -73,7 +73,7 @@ ceaserApp.controller("MainController", function ($scope, $http) {
         }
 
         var rows = [];
-        for (var i = 0; i<alphabet.length; i++){
+        for (i = 0; i<alphabet.length; i++){
             rows.push({
                 c: [
                     {v: alphabet[i]},
